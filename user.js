@@ -14,6 +14,8 @@ user_pref( "browser.urlbar.openViewOnFocus", false);
 //enable userChrome.css
 user_pref( "toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
+
+user_pref("signon.rememberSignons", false);
 //Other ideas:
 //https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion#User_Preferences
 //ui.prefersReducedMotion
