@@ -18,6 +18,11 @@ user_pref( "toolkit.legacyUserProfileCustomizations.stylesheets", true);
 
 user_pref("signon.rememberSignons", false);
 
+//new tab previews are distracting
+//I kinda like the text only ones, could leave this on and turn off 
+//browser.tabs.hoverPreview.showThumbnails
+//but the current logic of the hover is bad and pops up too fast/stays up too long.
+user_pref("browser.tabs.hoverPreview.enabled", false);
 
 //Other ideas:
 //https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion#User_Preferences
