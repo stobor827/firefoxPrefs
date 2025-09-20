@@ -4,22 +4,53 @@
  * RELEASE NOTES: http://userchrome.wesleybranton.com/notes/megabar */
 @-moz-document url(chrome://browser/content/browser.xhtml) {
     /* DISABLE EXPANDING START */
-    #urlbar[breakout][breakout-extend] {
-        top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
-        left: 0 !important;
-        width: 100% !important;
-    }
-    
-    #urlbar[breakout][breakout-extend] > #urlbar-input-container {
-        height: var(--urlbar-height) !important;
-        padding-block: 0 !important;
-        padding-inline: var(--urlbar-container-padding) !important;
-    }
-    
-    #urlbar[breakout][breakout-extend] > #urlbar-background {
-        animation-name: none !important;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, .05) !important;
-    }
+/* Firefox userChrome.css tweaks ********************************************************/
+/* Github: https://github.com/aris-t2/customcssforfx ************************************/
+/****************************************************************************************/
+
+
+/* Megabar: disable breakout / expanding onto toolbar *********************************************/
+#urlbar[breakout][breakout-extend] {
+  margin-left: 0 !important;
+  width: var(--urlbar-width) !important;
+  margin-top: calc((var(--urlbar-container-height) - var(--urlbar-height)) / 2) !important;
+
+
+  > .urlbar-input-container {
+    height: var(--urlbar-height) !important;
+    padding-block: var(--urlbar-container-padding) !important;
+    padding-inline: var(--urlbar-container-padding) !important;
+  }
+}
+
+#urlbar[breakout][breakout-extend] > #urlbar-background {
+  animation-name: unset !important;
+}
+
+#urlbar[breakout][breakout-extend] > :is(#urlbar-input-container,.urlbar-input-container) {
+  height: var(--urlbar-height) !important;
+  padding-block: 1px !important;
+  padding-inline: 1px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+/* disable result item roundness */
+#urlbar[breakout] .urlbarView-row-inner {
+  border-radius: 0px !important;
+}
+
+/* disable 'breakout' animation */
+#urlbar[breakout],
+#urlbar[breakout] * {
+  animation: unset !important;
+  duration: 0s !important;
+  animation-duration: 0s !important;
+}
+
+.urlbarView-body-inner {
+  border-top: 0px !important;
+}
     /* DISABLE EXPANDING END */
     
     /* REMOVE URL RESULT PADDING START */
