@@ -3,6 +3,7 @@ user_pref( "keyword.enabled", false);
 
 //disable search suggestions in urlbar
 user_pref("browser.urlbar.suggest.searches", false);
+user_pref("browser.urlbar.suggest.recentsearches", false); 
 
 user_pref( "browser.search.widget.inNavBar", true);
 
@@ -27,3 +28,4 @@ user_pref("browser.tabs.hoverPreview.enabled", false);
 //Other ideas:
 //https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion#User_Preferences
 //ui.prefersReducedMotion
+
